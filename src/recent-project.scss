@@ -1,0 +1,195 @@
+@import "index.scss";
+
+.recent-projects {
+  width: 100%;
+  background-color: $secondary;
+  margin-top: 700px;
+  display: flex;
+  justify-content: center;
+  // background-image: url(assets/images/noise.svg);
+  background-size: cover;
+  padding: 50px 0;
+
+  .recent-projects-column {
+    width: 90%;
+    max-width: 1200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    // background-color: white;
+
+    .recent-projects-header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+
+      * {
+        color: white;
+        text-align: center;
+      }
+      h2 {
+        font-size: clamp(1rem, 6vw, 1.5rem);
+        background-color: $secondary;
+        margin-top: 40px;
+        width: 80%;
+        max-width: 300px;
+        z-index: 1;
+      }
+      h3 {
+        font-size: clamp(0.8rem, 5vw, 1.2rem);
+      }
+      .box-design {
+        width: 90%;
+        max-width: 450px;
+        height: 50px;
+        border: 2px solid white;
+        position: absolute;
+      }
+    }
+
+    .projects-container {
+      margin-top: 30px;
+      box-sizing: border-box;
+      z-index: 1;
+      width: 100%;
+      // background-color: lightcoral;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      position: relative;
+      // padding: 10px;
+
+      .projects {
+        box-sizing: border-box;
+        background-color: rgb(116, 116, 116);
+        width: 100%;
+        max-width: 700px;
+        // min-height: 500px;
+        z-index: 1;
+        box-shadow: 2px 2px 5px rgb(15, 15, 15);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 10px;
+        // padding: 20px 0;
+      }
+
+      .portfolio {
+        h4 {
+          // color: rgb(0, 0, 0);
+          text-align: center;
+          padding-top: 10px;
+          font-size: 1.4rem;
+          font-weight: 700;
+        }
+        img {
+          width: 100%;
+        }
+        .links {
+          // padding-top: 10px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          gap: 10px;
+          * {
+            cursor: pointer;
+          }
+
+          a {
+            font-size: 3rem;
+            color: $third;
+          }
+          a:hover {
+            color: white;
+          }
+
+          button {
+            background-color: $third;
+            border: none;
+            padding: 8px 8px;
+
+            a {
+              color: white;
+              border: none;
+              font-size: 1rem;
+            }
+          }
+        }
+      }
+
+      .box-design {
+        border: 2px solid $third;
+        position: absolute;
+      }
+      .box-design.a {
+        top: 20%;
+        left: -5%;
+        bottom: -10%;
+        right: -2%;
+      }
+      .box-design.b {
+        top: 10%;
+        left: -2%;
+        bottom: -5%;
+        right: -5%;
+      }
+    }
+  }
+}
+@media (max-width: 950px) {
+  .recent-projects {
+    margin-top: 550px;
+  }
+}
+@media (max-width: 800px) {
+  .recent-projects {
+    margin-top: 500px;
+    .recent-projects-column {
+      .projects-column {
+        .projects-container {
+          flex-direction: column;
+          // background-color: lightcoral;
+          width: fit-content;
+
+          .box-design {
+            border: 2px solid $third;
+            position: absolute;
+          }
+          .box-design.a {
+            top: 10%;
+            left: -10%;
+            bottom: -5%;
+            right: -5%;
+          }
+          .box-design.b {
+            top: 5%;
+            left: -5%;
+            bottom: -2%;
+            right: -10%;
+          }
+        }
+      }
+    }
+  }
+}
+@media (max-width: 650px) {
+  .recent-projects {
+    margin-top: 400px;
+  }
+}
+@media (max-width: 400px) {
+  .recent-projects {
+    margin-top: 370px;
+    .recent-projects-header {
+      h2 {
+        // font-size: 1.2rem;
+        width: 100px;
+      }
+      h3 {
+        // font-size: 0.8rem;
+      }
+    }
+  }
+}

@@ -1,0 +1,167 @@
+@import "index.scss";
+
+.home-page {
+  // background-color: white;
+  display: flex;
+  justify-content: center;
+  margin-top: 80px;
+  z-index: -1;
+  width: 100%;
+  position: fixed;
+
+  .circle {
+    position: fixed;
+    width: 20%;
+  }
+  .circle.a {
+    animation: rolla 15s linear infinite;
+  }
+  .circle.b {
+    animation: rollb 15s linear infinite;
+  }
+  @keyframes rolla {
+    from {
+      left: 150%;
+      top: 0;
+      transform: rotate(0);
+    }
+    to {
+      left: -50%;
+      top: 50%;
+      transform: rotate(-360deg);
+    }
+  }
+  @keyframes rollb {
+    from {
+      left: -50%;
+      top: 50%;
+      transform: rotate(-360deg);
+    }
+    to {
+      left: 150%;
+      top: 0;
+      transform: rotate(0);
+    }
+  }
+
+  .home-column {
+    width: 90%;
+    max-width: 1000px; //for fixed homepage
+    // max-width: 1200px;
+    // background-color: lightcoral;
+    display: flex;
+    justify-content: center;
+    position: relative;
+
+    .blinking-led {
+      width: 100%;
+      max-width: 4px;
+      height: 100%;
+      max-height: 4px;
+      border-radius: 50%;
+      // background-color: $third;
+      position: absolute;
+      top: 3%;
+      left: 52%;
+      // animation: blink 2s linear infinite;
+      animation: blink 2s linear infinite;
+    }
+    @keyframes blink {
+      from {
+        background-color: black;
+      }
+      to {
+        background-color: $third;
+      }
+    }
+
+    .content-container {
+      box-sizing: border-box;
+      width: 45%;
+      // max-width: 550px;
+      position: absolute;
+      top: 23%;
+      left: 8%;
+      bottom: 0;
+      right: 0;
+
+      background-color: rgba(34, 34, 34, 0.85);
+      display: grid;
+      padding: 3%;
+      padding-right: 0;
+      aspect-ratio: 4/3;
+
+      :nth-child(1) {
+        color: $text-light;
+        font-size: clamp(1rem, 2vw, 1.3rem);
+      }
+      :nth-child(2) {
+        font-size: clamp(1.8rem, 4vw, 3rem);
+        font-weight: 700;
+        color: white;
+      }
+      :nth-child(3) {
+        font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+        color: $text-light;
+      }
+      :nth-child(4) {
+        font-size: clamp(0.9rem, 2vw, 1rem);
+        margin-top: 5%;
+        color: $text-light;
+      }
+    }
+    .background-style.a {
+      // background-color: #363636;
+      border: 2px solid $third;
+      position: absolute;
+      top: 2%;
+      left: 2%;
+      right: -2%;
+      bottom: -2%;
+    }
+    .background-style.b {
+      // background-color: #363636;
+      border: 2px solid $third;
+      position: absolute;
+      top: 5%;
+      left: 5%;
+      right: -5%;
+      bottom: -5%;
+    }
+  }
+}
+
+img {
+  width: 100%;
+  // position: absolute;
+}
+
+@media (max-width: 650px) {
+  .home-page {
+    .home-column {
+      .blinking-led {
+        display: none;
+      }
+      img {
+        display: none;
+      }
+      .content-container {
+        width: 100%;
+        max-width: 400px;
+        position: relative;
+        top: 0;
+        left: 0;
+        padding: 5%;
+      }
+    }
+  }
+}
+@media (max-width: 450px) {
+  .home-page {
+    .home-column {
+      .content-container {
+        padding: 6%;
+      }
+    }
+  }
+}
