@@ -14,7 +14,10 @@ export const metadata = {
 export default function RootLayout({ children }) {
     return (
         <html lang="en" suppressHydrationWarning>
-            <body className={neuropol.className} suppressHydrationWarning>
+            <body
+                className={`${neuropol.className} bg-black text-white`}
+                suppressHydrationWarning
+            >
                 {children}
             </body>
         </html>
